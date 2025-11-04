@@ -36,7 +36,7 @@ CREATE TABLE `users` (
     -- KYC 提交和审核信息
     `kyc_submitted_at` timestamp NULL COMMENT 'KYC提交时间',
     `kyc_verified_at` timestamp NULL COMMENT 'KYC验证通过时间',
-    `review_completed` varchar(50) DEFAULT 'PENDING' COMMENT 'PENDING (待审核), APPROVE (已批准)',
+    `review_completed` varchar(50) DEFAULT 'PENDING' COMMENT 'PENDING (待审核), APPROVE (已批准), REJECT(已拒绝）',
     `kyc_verification_notes` text DEFAULT NULL COMMENT 'KYC验证备注/拒绝原因',
 
     -- KYC 就业信息验证字段
