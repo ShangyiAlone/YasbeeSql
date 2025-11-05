@@ -101,4 +101,52 @@ CREATE TABLE `users` (
     UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户基础信息表';
 
+-- KYC护照文档URL
+ALTER TABLE users ADD COLUMN kyc_passport_document_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYC护照文档访问URL（仅图片）'
+    AFTER kyc_passport_document_path;
+
+-- KYC地址证明URL
+ALTER TABLE users ADD COLUMN kyc_address_proof_document_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYC地址证明文档访问URL（仅图片）'
+    AFTER kyc_address_proof_document_path;
+
+-- KYC资金证明URL
+ALTER TABLE users ADD COLUMN kyc_background_proof_of_funds_document_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYC资金证明文档访问URL（仅图片）'
+    AFTER kyc_background_proof_of_funds_document_path;
+
+-- ==================== User表 - KYB企业文档字段 ====================
+
+ALTER TABLE users ADD COLUMN kyb_certificate_of_incorporation_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB公司注册证书URL（仅图片）'
+    AFTER kyb_certificate_of_incorporation_path;
+
+ALTER TABLE users ADD COLUMN kyb_certificate_of_incumbency_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB在职证明URL（仅图片）'
+    AFTER kyb_certificate_of_incumbency_path;
+
+ALTER TABLE users ADD COLUMN kyb_certificate_of_good_standing_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB良好信誉证书URL（仅图片）'
+    AFTER kyb_certificate_of_good_standing_path;
+
+ALTER TABLE users ADD COLUMN kyb_memorandum_articles_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB公司章程URL（仅图片）'
+    AFTER kyb_memorandum_articles_path;
+
+ALTER TABLE users ADD COLUMN kyb_corporate_structure_chart_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB组织结构图URL（仅图片）'
+    AFTER kyb_corporate_structure_chart_path;
+
+ALTER TABLE users ADD COLUMN kyb_business_activity_proof_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB业务活动证明URL（仅图片）'
+    AFTER kyb_business_activity_proof_path;
+
+ALTER TABLE users ADD COLUMN kyb_annual_report_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB年度报告URL（仅图片）'
+    AFTER kyb_annual_report_path;
+
+ALTER TABLE users ADD COLUMN kyb_bank_statement_3months_url VARCHAR(255) DEFAULT NULL
+    COMMENT 'KYB银行对账单URL（仅图片）'
+    AFTER kyb_bank_statement_3months_path;
 
