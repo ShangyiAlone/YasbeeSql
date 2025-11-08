@@ -85,14 +85,14 @@ CREATE TABLE `users` (
     `planned_monthly_number_of_payouts` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划每月付款笔数',
 
     -- KYB 企业文档上传字段
-    `kyb_certificate_of_incorporation_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：公司注册证书文件路径',
-    `kyb_certificate_of_incumbency_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：在职证明文件路径',
-    `kyb_certificate_of_good_standing_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：良好信誉证明文件路径',
-    `kyb_memorandum_articles_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：公司章程/组织章程细则文件路径',
-    `kyb_corporate_structure_chart_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：企业股权结构图文件路径',
-    `kyb_business_activity_proof_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：业务活动证明文件路径（业务协议/合同/发票等）',
-    `kyb_annual_report_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：年度报告或审计财务报表文件路径',
-    `kyb_bank_statement_3months_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：最近3个月银行对账单文件路径',
+    `kyb_certificate_of_incorporation_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：公司注册证书文件路径',
+    `kyb_certificate_of_incumbency_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：在职证明文件路径',
+    `kyb_certificate_of_good_standing_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：良好信誉证明文件路径',
+    `kyb_memorandum_articles_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：公司章程/组织章程细则文件路径',
+    `kyb_corporate_structure_chart_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：企业股权结构图文件路径',
+    `kyb_business_activity_proof_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：业务活动证明文件路径（业务协议/合同/发票等）',
+    `kyb_annual_report_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：年度报告或审计财务报表文件路径',
+    `kyb_bank_statement_3months_path` varchar(1024) DEFAULT NULL COMMENT 'KYB验证：最近3个月银行对账单文件路径',
 
     -- 关联表ID字段:法人
     `kyb_legal_representative_ids` varchar(500) DEFAULT NULL COMMENT 'KYB验证：关联的法定代表人ID列表，逗号分隔',
