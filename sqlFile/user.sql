@@ -15,6 +15,8 @@ CREATE TABLE `users` (
     `kyc_completed` tinyint(1) DEFAULT '0' COMMENT 'Whether KYC (Know Your Customer) is completed',
     `kyb_completed` tinyint(1) DEFAULT '0' COMMENT 'Whether KYB (Know Your Business) is completed',
 
+    `kyb_incorporate_jurisdiction` varchar(100) NOT NULL COMMENT '管辖地',
+
     -- KYC 个人信息验证字段
     `kyc_date_of_birth` date DEFAULT NULL COMMENT 'KYC验证：出生日期',
     `kyc_country_of_birth` varchar(100) DEFAULT NULL COMMENT 'KYC验证：出生国家',
@@ -75,11 +77,12 @@ CREATE TABLE `users` (
 
 
     -- Business Information 业务信息字段
-    `kyb_business_monthly_payment_volume` varchar(100) DEFAULT NULL COMMENT 'KYB验证：月支付量范围',
-    `kyb_business_region` varchar(200) DEFAULT NULL COMMENT 'KYB验证：业务区域（如China, America等，可多选）',
-    `kyb_business_primary_currency` varchar(100) DEFAULT NULL COMMENT 'KYB验证：主要货币（如USD, RMB等，可多选）',
-    `kyb_business_planned_monthly_payments` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划月支付量范围',
-    `kyb_business_planned_monthly_receipts` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划月收款量范围',
+    `planned_monthly_number_of_collection` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划每月收款笔数',
+    `business_region` varchar(200) DEFAULT NULL COMMENT 'KYB验证：业务区域（如China, America等，可多选）',
+    `planned_monthly_receipts` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划月收款金额范围',
+    `planned_monthly_volume_of_collection` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划月收款总额',
+    `planned_transaction_currencies` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划交易币种（如USD, RMB等，可多选）',
+    `planned_monthly_number_of_payouts` varchar(100) DEFAULT NULL COMMENT 'KYB验证：计划每月付款笔数',
 
     -- KYB 企业文档上传字段
     `kyb_certificate_of_incorporation_path` varchar(255) DEFAULT NULL COMMENT 'KYB验证：公司注册证书文件路径',
