@@ -39,6 +39,9 @@ CREATE TABLE `users` (
     `kyc_submitted_at` timestamp NULL COMMENT 'KYC提交时间',
     `kyc_verified_at` timestamp NULL COMMENT 'KYC验证通过时间',
     `review_completed` varchar(50) DEFAULT 'PENDING' COMMENT 'PENDING (待审核), APPROVE (已批准), REJECT(已拒绝）',
+
+    'review_time'  varchar(50) DEFAULT 'FIRST' COMMENT 'FIRST, SECOND, 标记用户是第几次审核',
+
     `kyc_verification_notes` text DEFAULT NULL COMMENT 'KYC验证备注/拒绝原因',
 
     -- KYC 就业信息验证字段
@@ -72,7 +75,7 @@ CREATE TABLE `users` (
     `kyb_company_introduction` text DEFAULT NULL COMMENT 'KYB验证：公司简介（必填）',
     `kyb_submitted_at` timestamp NULL COMMENT 'KYB提交时间',
     `kyb_verified_at` timestamp NULL COMMENT 'KYB审核通过时间',
-    `kyb_verification_status` varchar(50) DEFAULT 'PENDING' COMMENT 'KYB验证状态',
+    `kyb_verification_status` varchar(50) DEFAULT 'PENDING' COMMENT 'KYB验证状态 PENDING (待审核), APPROVE (已批准), REJECT(已拒绝）''',
     `kyb_verification_notes` text DEFAULT NULL COMMENT 'KYB验证备注/拒绝原因',
 
 
