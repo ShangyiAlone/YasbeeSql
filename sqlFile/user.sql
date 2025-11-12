@@ -40,8 +40,6 @@ CREATE TABLE `users` (
     `kyc_verified_at` timestamp NULL COMMENT 'KYC验证通过时间',
     `review_completed` varchar(50) DEFAULT 'PENDING' COMMENT 'PENDING (待审核), APPROVE (已批准), REJECT(已拒绝）',
 
-    'review_time'  varchar(50) DEFAULT 'FIRST' COMMENT 'FIRST, SECOND, 标记用户是第几次审核',
-
     `kyc_verification_notes` text DEFAULT NULL COMMENT 'KYC验证备注/拒绝原因',
 
     -- KYC 就业信息验证字段
@@ -106,4 +104,8 @@ CREATE TABLE `users` (
     PRIMARY KEY (`id`),
     UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户基础信息表';
+
+ALTER TABLE users
+    ADD COLUMN review_time DATETIME DEFAULT NULL COMMENT 'FIRST, SECOND, 标记用户是第几次审核';
+
 
