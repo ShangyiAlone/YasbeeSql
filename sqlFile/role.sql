@@ -57,6 +57,7 @@ CREATE TABLE `verification_cases` (
     -- 时间信息
     `submitted_date` DATETIME NOT NULL COMMENT '提交时间',
     `last_activity` DATETIME NOT NULL COMMENT '最后活动时间',
+    `approve_date` DATETIME COMMENT '审批通过时间',
     `completed_date` DATETIME COMMENT '完成时间',
 
     -- 审核备注
