@@ -52,7 +52,7 @@ CREATE TABLE `verification_cases` (
 
     -- 分配信息
     `assigned_to` VARCHAR(100) COMMENT '分配给的审核人员',
-    `assignee_id` BIGINT COMMENT '审核人员ID',
+    `assignee_email` VARCHAR(255) COMMENT '审核人员email',
 
     -- 时间信息
     `submitted_date` DATETIME NOT NULL COMMENT '提交时间',
@@ -72,7 +72,7 @@ CREATE TABLE `verification_cases` (
     INDEX `idx_user_id` (`user_id`),
     INDEX `idx_status` (`status`),
     INDEX `idx_customer_type` (`customer_type`),
-    INDEX `idx_assigned_to` (`assignee_id`),
+    INDEX `idx_assigned_to` (`assignee_email`),
     INDEX `idx_submitted_date` (`submitted_date`),
     INDEX `idx_last_activity` (`last_activity`)
 
