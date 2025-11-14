@@ -49,7 +49,6 @@ CREATE TABLE `verification_cases` (
 
     -- 状态信息
     `status` VARCHAR(50) NOT NULL COMMENT '审核状态: New Submission, First Review, Second Review, Completed, Rejected',
-    `kyc_status` VARCHAR(50) COMMENT 'KYC状态',
 
     -- 分配信息
     `assigned_to` VARCHAR(100) COMMENT '分配给的审核人员',
