@@ -8,8 +8,10 @@ CREATE TABLE `users` (
     `email` varchar(100) NOT NULL COMMENT '邮箱',
     `password_hash` varchar(255) NOT NULL COMMENT '加密后的密码（哈希值）',
     `status` tinyint DEFAULT '1' COMMENT '用户状态：1=正常，0=禁用',
+
     `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+
     `account_type` varchar(50) DEFAULT 'PERSONAL' COMMENT 'Account type: PERSONAL (individual), ENTERPRISE (business)',
     `member_level` varchar(50) DEFAULT 'STANDARD' COMMENT 'Membership level: STANDARD, VIP, PREMIUM',
     `kyc_completed` tinyint(1) DEFAULT '0' COMMENT 'Whether KYC (Know Your Customer) is completed',
@@ -71,8 +73,10 @@ CREATE TABLE `users` (
     `kyb_industry` varchar(100) DEFAULT NULL COMMENT 'KYB验证：所属行业（必填）',
     `kyb_business_scope` text DEFAULT NULL COMMENT 'KYB验证：业务范围（必填）',
     `kyb_company_introduction` text DEFAULT NULL COMMENT 'KYB验证：公司简介（必填）',
+
     `kyb_submitted_at` timestamp NULL COMMENT 'KYB提交时间',
     `kyb_verified_at` timestamp NULL COMMENT 'KYB审核通过时间',
+
     `kyb_verification_status` varchar(50) DEFAULT 'PENDING' COMMENT 'KYB验证状态 PENDING (待审核), APPROVE (已批准), REJECT(已拒绝）''',
     `kyb_verification_notes` text DEFAULT NULL COMMENT 'KYB验证备注/拒绝原因',
 

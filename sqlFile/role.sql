@@ -38,13 +38,13 @@ CREATE TABLE `verification_cases` (
     `user_id` BIGINT NOT NULL COMMENT '关联用户ID',
 
     -- 客户信息
-    `customer_first_name` VARCHAR(50) NOT NULL COMMENT '客户名字',
-    `customer_last_name` VARCHAR(50) NOT NULL COMMENT '客户姓氏',
-    `customer_email` VARCHAR(100) NOT NULL COMMENT '客户邮箱',
-    `customer_type` VARCHAR(20) NOT NULL COMMENT '客户类型: Personal, Business',
+    `customer_first_name` VARCHAR(50)  COMMENT '客户名字',
+    `customer_last_name` VARCHAR(50) COMMENT '客户姓氏',
+    `customer_email` VARCHAR(100)  COMMENT '客户邮箱',
+    `customer_type` VARCHAR(20) COMMENT '客户类型: Personal, Business',
 
     -- 案件信息
-    `case_type` VARCHAR(20) NOT NULL COMMENT '案件类型: KYC, KYB',
+    `case_type` VARCHAR(20) COMMENT '案件类型: KYC, KYB',
     `passport_id_number` VARCHAR(100) COMMENT '护照/ID号码',
 
     -- 状态信息
@@ -55,13 +55,14 @@ CREATE TABLE `verification_cases` (
     `assignee_email` VARCHAR(255) COMMENT '审核人员email',
 
     -- 时间信息
-    `submitted_date` DATETIME NOT NULL COMMENT '提交时间',
-    `last_activity` DATETIME NOT NULL COMMENT '最后活动时间',
+    `submitted_date` DATETIME COMMENT '提交时间',
+    `last_activity` DATETIME  COMMENT '最后活动时间',
     `approve_date` DATETIME COMMENT '审批通过时间',
     `completed_date` DATETIME COMMENT '完成时间',
 
     -- 审核备注
     `review_notes` TEXT COMMENT '审核备注',
+
     `rejection_reason` TEXT COMMENT '拒绝原因',
 
     -- 系统字段
@@ -79,6 +80,24 @@ CREATE TABLE `verification_cases` (
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='审核案件管理表';
 
+ALTER TABLE verification_cases
+    ADD COLUMN kyb_company_introduction TEXT FIRST;
+
+ALTER TABLE verification_cases
+    ADD COLUMN kyb_industry VARCHAR(255)
+        AFTER kyb_company_introduction;
+
+ALTER TABLE verification_cases
+    ADD COLUMN kyb_incorporate_jurisdiction VARCHAR(255)
+        AFTER kyb_industry;
+
+ALTER TABLE verification_cases
+    ADD COLUMN kyb_company_registration_number VARCHAR(255)
+        AFTER kyb_incorporate_jurisdiction;
+
+ALTER TABLE verification_cases
+    ADD COLUMN kyb_company_name VARCHAR(255)
+        AFTER kyb_company_registration_number;
 
 
 
