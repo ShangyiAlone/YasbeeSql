@@ -99,5 +99,12 @@ ALTER TABLE verification_cases
     ADD COLUMN kyb_company_name VARCHAR(255)
         AFTER kyb_company_registration_number;
 
+ALTER TABLE verification_cases
+    ADD COLUMN approved_by TEXT
+        AFTER kyb_company_name;
+
+ALTER TABLE verification_cases
+    ADD COLUMN role_name VARCHAR(255)
+        AFTER approved_by;
 
 
