@@ -113,3 +113,5 @@ ALTER TABLE users
     ADD COLUMN review_time DATETIME DEFAULT NULL COMMENT 'FIRST, SECOND, 标记用户是第几次审核';
 
 
+ALTER TABLE users
+    ADD COLUMN cust_id VARCHAR(255) AFTER email;
