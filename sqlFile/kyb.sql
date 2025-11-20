@@ -19,6 +19,10 @@ CREATE TABLE `kyb_legal_representative` (
     KEY `idx_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='KYB法定代表人信息表';
 
+ALTER TABLE kyb_legal_representative
+    ADD COLUMN deleted TINYINT(1) DEFAULT 0 COMMENT 'Soft delete flag'
+        AFTER proof_of_address_path;
+
 
 -- ============================================================================
 -- KYB UBO（最终受益人）表
@@ -62,6 +66,10 @@ CREATE TABLE `kyb_ubo` (
     PRIMARY KEY (`id`),
     KEY `idx_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='KYB最终受益人信息表';
+
+ALTER TABLE kyb_ubo
+    ADD COLUMN deleted TINYINT(1) DEFAULT 0 COMMENT 'Soft delete flag'
+        AFTER proof_of_address_path;
 
 
 
